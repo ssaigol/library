@@ -8,6 +8,40 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    <button id="add-book">Add Entry</button>
+    <div class="main">
+        <table id="table">
+            <thead>
+                <tr>
+                    <th class="title">Title</th>
+                    <th class="author">Author</th>
+                    <th class="pages">Pages</th>
+                    <th class="status">Read?</th>
+                    <th class="remove">Delete Entry</th>
+                </tr>
+            </thead>
+            <tbody id="body">
+                <!-- Book Entries -->
+            </tbody>
+        </table>
+    </div>
 
+    <dialog>
+        <button id="close">X</button>
+        <form method="dialog">
+            <label>Book Title<input type="text" name="title" id="title" ></label>
+            <label>Author<input type="text" name="author" id="author" ></label>
+            <label>Page Count<input type="number" name="pages" id="pages" ></label>
+            <fieldset>
+                <legend>Read?</legend>
+                <label>Read<input type="radio" name="read" id="read" checked></label>
+                <label>Not Read<input type="radio" name="read" id="not-read"></label>
+            </fieldset>
+            <button type="submit" id="submit-button" autofocus>Submit</button>
+        </form>
+    </dialog>
 </body>
 </html>
+
+
+
