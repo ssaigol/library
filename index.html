@@ -8,6 +8,9 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    <div class="header">
+        <div class="header-title">My Library</div>
+    </div>
     <button id="add-book">Add Entry</button>
     <div class="main">
         <table id="table">
@@ -16,7 +19,7 @@
                     <th class="title">Title</th>
                     <th class="author">Author</th>
                     <th class="pages">Pages</th>
-                    <th class="status">Read?</th>
+                    <th class="status">Read/Not Read</th>
                     <th class="remove">Options</th>
                 </tr>
             </thead>
@@ -28,7 +31,7 @@
 
     <dialog>
         <button id="close">X</button>
-        <form method="dialog">
+        <form method="dialog" id="form">
             <label>Book Title<input type="text" name="title" id="title" ></label>
             <label>Author<input type="text" name="author" id="author" ></label>
             <label>Page Count<input type="number" name="pages" id="pages" ></label>

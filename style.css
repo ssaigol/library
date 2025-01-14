@@ -9,11 +9,16 @@ table, th, td {
 
 th, td {
   padding: 8px;
+}
+
+td {
   text-align: left;
+  background-color: white;
 }
 
 th {
   background-color: #f4f4f4;
+  text-align: center;
 }
 
 .options {
@@ -21,4 +26,86 @@ th {
   justify-content: space-evenly;
   box-sizing: border-box;
   width: 100%;
+}
+
+#add-book {
+  color: white;
+  background-color: #0c5c8a;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 30px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border: none;
+  margin: 10px;
+}
+
+.delete {
+  color: white;
+  background-color: #a90f0f;
+  font-weight: 500;
+  padding: 7px 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.change-read {
+  color: white;
+  background-color: #0fa919;
+  font-weight: 500;
+  padding: 7px 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85px;
+  background-color: rgb(127, 204, 229);
+  margin-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.header-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+  background-color: rgb(199, 226, 235);
+}
+
+dialog {
+  background-color: beige;
+  visibility: hidden;
+  height: 250px;
+  width: 45%;
+  border: none;
+  border-radius: 10px;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 10px;
+  margin-top: 20px;
+  padding-left: 50px;
+}
+
+#form > * {
+  /* padding: 5px; */
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+input {
+  margin-left: 25px;
 }

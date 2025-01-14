@@ -38,6 +38,7 @@ submit.addEventListener('click', (e) => {
     //Repopulate table display with new book entry
     displayBooks(myLibrary);
     addListener();
+    dialog.style.visibility = "hidden";
 })
 
 //Event listeners for opening and closing modal form
@@ -45,8 +46,14 @@ const dialog = document.querySelector("dialog");
 const addButton = document.querySelector("#add-book");
 const closeDialog = document.querySelector("#close");
 
-addButton.addEventListener("click", () => dialog.showModal());
-closeDialog.addEventListener("click", () => dialog.close());
+addButton.addEventListener("click", () => {
+    dialog.showModal();
+    dialog.style.visibility = "visible";
+    });
+closeDialog.addEventListener("click", () => {
+    dialog.close();
+    dialog.style.visibility = "hidden";
+});
 
 
 //Iterate through library array and display each book object as new table row in DOM
