@@ -1,32 +1,7 @@
-// const deleteButtons = document.querySelectorAll(".delete-row");
-// deleteButtons.forEach(function(element) {
-//     element.addEventListener("click", function deleteRow () {
-//         myLibrary.splice(element.dataset.indexNumber)
-//         // for (i = 0; i < myLibrary.length; i++) {
-//         //     if (element.dataset.indexNumber == i) myLibrary.splice(i);
-//         //     clearDisplay();
-//         // }
-//         clearDisplay();
-//         displayBooks(myLibrary);
-//     })
-
-// })
-
-
-
-
-// // deleteButtons.addEventListener("click", function deleteRow (e) {
-// //     for (i = 0; i < myLibrary.length; i++) {
-// //         if (e.dataset.indexNumber === i) myLibrary.splice(i);
-// //         displayBooks([]);
-// //         displayBooks(myLibrary);
-// //     }
-// // })
-
 //Library Array containing all books as objects
 const myLibrary = [
     { title: "The Hobbit", author: "J.R.R. Tolkien", pages: 310, read: "Read"},
-    { title: "Wuthering Heights", author: "Emily Brontë", pages: 464, read: "Not read"}
+    { title: "Wuthering Heights", author: "Emily Brontë", pages: 464, read: "Not Read"}
 ];
 
 //Book object constructor
@@ -102,14 +77,25 @@ function displayBooks (arr) {
         readCell.textContent = book.read;
         row.appendChild(readCell)
         //Create delete table cell, populate with button, and append to row
-        const remove = document.createElement("td");
+        const optionsCell = document.createElement("td");
+        const options = document.createElement("div");
+        options.className = "options";
         const removeButton = document.createElement("button");
         removeButton.className = "delete";
         //Add data attribute to correspond DOM button element with array index
         removeButton.dataset.index = index;
-        removeButton.textContent = "X";
-        remove.appendChild(removeButton);
-        row.appendChild(remove);
+        removeButton.textContent = "Delete";
+        options.appendChild(removeButton); 
+        //Create button for changing read status if book not read
+        if (book.read === "Not Read") {
+            const changeRead = document.createElement("button");
+            changeRead.className = "change-read";
+            changeRead.dataset.index = index;
+            changeRead.textContent = "Read";
+            options.appendChild(changeRead);
+        }
+        optionsCell.appendChild(options);
+        row.appendChild(optionsCell);
         //Append completed new row to table body
         tbody.appendChild(row);
     });
@@ -127,6 +113,13 @@ function addListener () {
             deleteBook(deleteIndex);
         })
     })
+    const changeReadButtons = document.querySelectorAll(".change-read");
+    changeReadButtons.forEach( e => {
+        e.addEventListener("click", () => {
+            const changeReadIndex = e.dataset.index;
+            changeReadStatus(changeReadIndex);
+        }) 
+    })
 }
 
 //Initialize addlistener function on load
@@ -135,6 +128,14 @@ addListener();
 //Delete book function that is called when delete button clicked
 function deleteBook(index) {
     myLibrary.splice(index, 1);
+    displayBooks(myLibrary);
+    addListener();
+}
+
+
+//Function to change read status
+function changeReadStatus(index) {
+    myLibrary[index].read = "Read";
     displayBooks(myLibrary);
     addListener();
 }
