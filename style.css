@@ -97,9 +97,10 @@ body {
 dialog {
   background-color: beige;
   height: 250px;
-  width: 50%;
+  width: 550px;
   border: 4px darkslategrey solid;
   border-radius: 10px;
+  padding-right: 50px;
 }
 
 dialog::backdrop {
