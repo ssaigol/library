@@ -62,6 +62,9 @@ const display = (function () {
         myLibrary.getLibraryArr().forEach((book, index) => {
             //Create row
             const row = document.createElement("tr");
+            if ((index + 1) % 2 === 0) {
+                row.classList.add("even-row");
+            } else row.classList.add("odd-row");
             //Create title cell & populate with Book obj title property
             const titleCell = document.createElement("td");
             titleCell.textContent = book.title;

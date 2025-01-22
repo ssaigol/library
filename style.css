@@ -17,12 +17,21 @@ th, td {
 
 td {
   text-align: left;
-  background-color: white;
+  /* background-color: white; */
 }
 
 th {
-  background-color: #f4f4f4;
+  background-color: #bbbaba;
   text-align: center;
+}
+
+
+.even-row {
+  background-color: rgb(246, 246, 226);
+}
+
+.odd-row {
+  background-color: white;
 }
 
 .options {
@@ -87,11 +96,14 @@ body {
 
 dialog {
   background-color: beige;
-  /* visibility: hidden; */
   height: 250px;
-  width: 45%;
-  border: none;
+  width: 50%;
+  border: 4px darkslategrey solid;
   border-radius: 10px;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 #form {
@@ -103,13 +115,28 @@ dialog {
   padding-left: 50px;
 }
 
-#form > * {
+#form > label {
+  justify-content: space-between;
   display: flex;
-  justify-content: space-evenly;
   font-size: 1.1rem;
   font-weight: 600;
 }
 
+fieldset {
+  justify-content: space-evenly;
+  display: flex;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+#form > button {
+  display: inline;
+  width: 100px;
+  align-self: center;
+  font-weight: 600;
+  padding: 3px 0px;
+}
+
 input {
-  margin-left: 25px;
+  width: 70%;
 }
