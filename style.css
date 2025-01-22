@@ -87,7 +87,7 @@ body {
 
 dialog {
   background-color: beige;
-  visibility: hidden;
+  /* visibility: hidden; */
   height: 250px;
   width: 45%;
   border: none;
