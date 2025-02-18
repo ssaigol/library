@@ -132,8 +132,6 @@ const display = (function () {
 
 
 //Form validation
-
-
 const checkForm = () => {
     const newTitle = document.getElementById("title");
     const newAuthor = document.getElementById("author");
