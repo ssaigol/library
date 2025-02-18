@@ -123,9 +123,30 @@ const display = (function () {
         if (newRead.checked) {
             read = "Read";
         } else read = "Not Read";
-        myLibrary.addToLibrary(title, author, pages, read);
+        if (checkForm()) myLibrary.addToLibrary(title, author, pages, read);
     });
     window.addEventListener("load", render);
 
     return {render};
 })();
+
+
+//Form validation
+
+
+const checkForm = () => {
+    const newTitle = document.getElementById("title");
+    const newAuthor = document.getElementById("author");
+    const newPages = document.getElementById("pages");
+    const submitBook = document.getElementById("submit-button");
+    if (newTitle.value.trim().length === 0 || newAuthor.value.trim().length === 0 || newPages.value == "") {
+        submitBook.setCustomValidity("Please fill all fields");
+        return false;
+    } else if (newPages.value < 1) {
+        submitBook.setCustomValidity("Page count must be greater than 0");
+        return false;
+    } else {
+        submitBook.setCustomValidity("");
+        return true;
+    }
+}; 
